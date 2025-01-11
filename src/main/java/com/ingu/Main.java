@@ -17,14 +17,14 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         log.info("Main started");
-        demoGenericSubscriber();
+//        demoGenericSubscriber();
 //        demoMonoNativeSubscribe();
 //        demoMono();
 //        demoStreamForLazyConcept();
 //        demoRequestMoreThanMax();
 //        demoCancelAndContinueToRequest();
 //        demoNotYetRequestToShowNothing();
-//        demoRequestToShow();
+        demoRequestToShow();
 //        demoRequestOverMax();
     }
     private static void demoGenericSubscriber() {
