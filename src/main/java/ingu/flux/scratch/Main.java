@@ -1,11 +1,8 @@
-package com.ingu;
+package ingu.flux.scratch;
 
-import com.ingu.common.Util;
-import com.ingu.publisher.PublisherImpl;
-import com.ingu.subscriber.SubscriberImpl;
-import org.reactivestreams.Publisher;
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
+import ingu.flux.scratch.common.Util;
+import ingu.flux.scratch.publisher.PublisherImpl;
+import ingu.flux.scratch.subscriber.SubscriberImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Mono;
@@ -29,7 +26,7 @@ public class Main {
     }
     private static void demoGenericSubscriber() {
         var mono = Mono.just("hello");
-        mono.subscribe(Util.getSubscriber("ingu"));
+        mono.subscribe(Util.getSubscriber("ingu/flux/generic"));
     }
     /**
      * native method subscribe() implemented in Mono

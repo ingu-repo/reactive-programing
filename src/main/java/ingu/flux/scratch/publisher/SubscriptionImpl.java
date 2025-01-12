@@ -1,4 +1,4 @@
-package com.ingu.publisher;
+package ingu.flux.scratch.publisher;
 
 import com.github.javafaker.Faker;
 import org.reactivestreams.Subscriber;

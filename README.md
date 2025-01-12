@@ -1,4 +1,12 @@
 
+## Environments
+* Java
+* Maven
+* org.reactivestreams
+
+## Summary
+Pub/Sub design patterns with Mon/Flux data stream models
+
 ## Theory
 **Traditional Communication Pattern**
 * request vs response pattern
@@ -45,7 +53,8 @@ var mono = Mono.just("john");
 * Simplest way to create Mono of Publisher is just() method
 
 **Flux** 
-* publish n items such as price chagnes intraday etc 
+* flux can emit more than 1 item, and it is useful in such as price chagnes etc
+* Followed by onComplete or onError, and basically never ending.
 * Need Stream / Back pressure / extra mothods handling stream processing 
 
 **Appendix**

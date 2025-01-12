@@ -10,7 +10,7 @@
         <module name="reactive-test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="18">
       <module name="reactive-test" target="17" />
     </bytecodeTargetLevel>
   </component>

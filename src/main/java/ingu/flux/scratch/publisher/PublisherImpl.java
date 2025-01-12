@@ -1,4 +1,4 @@
-package com.ingu.publisher;
+package ingu.flux.scratch.publisher;
 
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;

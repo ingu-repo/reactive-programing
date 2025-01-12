@@ -1,4 +1,4 @@
-package com.ingu.common;
+package ingu.flux.scratch.common;
 
 import org.reactivestreams.Subscriber;
 
