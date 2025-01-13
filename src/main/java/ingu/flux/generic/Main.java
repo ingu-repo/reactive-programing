@@ -1,9 +1,7 @@
 package ingu.flux.generic;
 
 import ingu.flux.client.ExternalServiceClient;
-import ingu.flux.client.ExternalServiceClient_SEO;
 import ingu.flux.generic.common.Util;
-import ingu.flux.generic.model.Product;
 import ingu.flux.scratch.subscriber.SubscriberImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -212,7 +210,7 @@ public class Main {
         log.info("Completed !!");
     }
     public static void testClientByAll() {
-        ExternalServiceClient_SEO client = new ExternalServiceClient_SEO();
+        ExternalServiceClient client = new ExternalServiceClient();
         try {
             Flux products = client.getProductNames();
         } catch (Exception e) {
