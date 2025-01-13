@@ -1,11 +1,14 @@
-package ingu.flux.generic.common;
+package ingu.flux.generic.subscriber;
 
-import lombok.extern.log4j.Log4j2;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Subscribing contents of generic type
+ * @param <T>
+ */
 public class DefaultSubscriber<T> implements Subscriber<T> {
     private static final String className = DefaultSubscriber.class.getSimpleName();
     private static final Logger log = LoggerFactory.getLogger(DefaultSubscriber.class);
@@ -22,17 +25,17 @@ public class DefaultSubscriber<T> implements Subscriber<T> {
     }
 
     @Override
-    public void onNext(Object o) {
-        log.info("{}:onNext():received {}", this.name, o);
+    public void onNext(T item) {
+        log.info("{}:onNext():received {}", this.name, item);
     }
 
     @Override
     public void onError(Throwable throwable) {
-        System.out.println(className + ".onError()");
+        log.error("{}:onError()", this.name, throwable);
     }
 
     @Override
     public void onComplete() {
-        System.out.println(className + ".onComplete()");
+        log.debug("{}:onComplete()", this.name);
     }
 }

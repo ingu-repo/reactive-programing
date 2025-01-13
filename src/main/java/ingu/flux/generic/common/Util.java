@@ -1,11 +1,11 @@
 package ingu.flux.generic.common;
 import com.github.javafaker.Faker;
+import ingu.flux.generic.subscriber.DefaultSubscriber;
 import org.reactivestreams.Subscriber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -14,13 +14,13 @@ public class Util {
     private static final Logger log = LoggerFactory.getLogger(Util.class);
     private static final Faker faker = Faker.instance();
 
-    public static Subscriber subscriber() {
+    public static <T> Subscriber<T> subscriber() {
         log.debug("subscriber()");
-        return new DefaultSubscriber("");
+        return new DefaultSubscriber<>("");
     }
-    public static Subscriber subscriber(String name) {
+    public static <T> Subscriber<T> subscriber(String name) {
         log.debug("subscriber({})", name);
-        return new DefaultSubscriber(name);
+        return new DefaultSubscriber<>(name);
     }
     public static Faker faker() {
         return faker;

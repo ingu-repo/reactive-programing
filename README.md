@@ -57,14 +57,22 @@ var mono = Mono.just("john");
 * Followed by onComplete or onError, and basically never ending.
 * Need Stream / Back pressure / extra mothods handling stream processing 
 
-**Appendix**
-* Process : unit of resources
-* Thread  : unit of execution
-* Heap memory : store objects that we create them dynamically i.e. ArrayList/HashMap
-* Stac memory : store local references i.e. local variable / function called information
+### Appendix
+*Stream*
+* java 8 introduced a stream which is a lazy operator by default, which doesn't execute anything unless connect to terminal operator such as subscribe/toList/toString/etc
+```java
+Stream.of(1)
+    .peek(i -> log.info("received: {}", i)) // Nothing printed in this step
+    .toList(); // above log printed only when it's connected some terminal operator 
+```
+*Process* : unit of resources<br>
+*Thread*  : unit of execution<br>
+*Heap memory* : store objects that we create them dynamically i.e. ArrayList/HashMap<br>
+*Stac memory* : store local references i.e. local variable / function called information<br>
 > CPU / Memory are expensive so reactive programing design comes up as part of thinking how to save such expensive costs
-* Sync  : blocking model     :
-* Async : non-blocking model : use resources more efficiently
+
+*Sync*  : blocking model     :<br>
+*Async* : non-blocking model : use resources more efficiently<br>
 
  
 
