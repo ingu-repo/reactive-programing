@@ -58,6 +58,11 @@ var mono = Mono.just("john");
 * Need Stream / Back pressure / extra mothods handling stream processing 
 
 ### Appendix
+*Maven Wrapper*
+```shell
+mvn wrapper:wrapper
+```
+
 *Stream*
 * java 8 introduced a stream which is a lazy operator by default, which doesn't execute anything unless connect to terminal operator such as subscribe/toList/toString/etc
 ```java

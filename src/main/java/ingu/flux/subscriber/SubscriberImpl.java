@@ -1,6 +1,5 @@
-package ingu.flux.scratch.subscriber;
+package ingu.flux.subscriber;
 
-import lombok.Getter;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import org.slf4j.Logger;

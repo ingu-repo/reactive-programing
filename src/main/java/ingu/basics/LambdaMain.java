@@ -3,7 +3,7 @@ package ingu.basics;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class LambdaMain {
     public static void main(String[] args) {
         testLambda();
     }
@@ -13,10 +13,12 @@ public class Main {
     public static void testLambda() {
         List asList = Arrays.asList("Tokyo", "Chiba", "Kumamoto");
         List listOf = List.of("Kyoto", "Fukuoka", "Sendai");
+
         asList.stream()
-                .map(v -> "Hello " + v)
-                .forEach(v -> System.out.println(v)
-                );
+            .map(v -> "Hello " + v)
+            .forEach(v -> System.out.println(v)
+            );
+
         listOf.stream()
                 .map(v -> "Hello " + v)
                 .filter(v -> v.toString().endsWith("o") )

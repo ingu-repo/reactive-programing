@@ -1,4 +1,4 @@
-package ingu.flux.generic.subscriber;
+package ingu.flux.subscriber;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 public class DefaultSubscriber<T> implements Subscriber<T> {
     private static final String className = DefaultSubscriber.class.getSimpleName();
     private static final Logger log = LoggerFactory.getLogger(DefaultSubscriber.class);
+    private static final int REQUEST_MAX_COUNT = 10000;
     private final String name;
     public DefaultSubscriber(String name) {
         log.debug("DefaultSubscriber({})", name);
@@ -21,7 +22,7 @@ public class DefaultSubscriber<T> implements Subscriber<T> {
     @Override
     public void onSubscribe(Subscription subscription) {
         log.debug("onSubscribe({})", this.name);
-        subscription.request(10);
+        subscription.request(REQUEST_MAX_COUNT);
     }
 
     @Override

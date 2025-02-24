@@ -1,6 +1,6 @@
-package ingu.flux.generic.common;
+package ingu.flux.common;
 import com.github.javafaker.Faker;
-import ingu.flux.generic.subscriber.DefaultSubscriber;
+import ingu.flux.subscriber.DefaultSubscriber;
 import org.reactivestreams.Subscriber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

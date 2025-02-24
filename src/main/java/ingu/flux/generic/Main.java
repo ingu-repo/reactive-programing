@@ -1,8 +1,8 @@
 package ingu.flux.generic;
 
 import ingu.flux.client.ExternalServiceClient;
-import ingu.flux.generic.common.Util;
-import ingu.flux.scratch.subscriber.SubscriberImpl;
+import ingu.flux.common.Util;
+import ingu.flux.subscriber.SubscriberImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Flux;
