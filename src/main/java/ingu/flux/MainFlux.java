@@ -2,6 +2,7 @@ package ingu.flux;
 
 import ingu.flux.common.Util;
 import ingu.flux.helper.NameGenerator;
+import ingu.flux.service.FileService;
 import ingu.flux.subscriber.SubscriberImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,9 +23,9 @@ import java.util.List;
  *  - loop concept implemented internally, so can't generate multiple data inside method
  *
  */
-public class FluxMain {
+public class MainFlux {
 
-    private static final Logger log = LoggerFactory.getLogger(FluxMain.class);
+    private static final Logger log = LoggerFactory.getLogger(MainFlux.class);
 
     public static void main(String[] args) {
         fileToFlux();
@@ -48,7 +49,7 @@ public class FluxMain {
      */
     public static void fileToFlux() {
         String fileName = "test.txt";
-        var fileService = new FileReaderService();
+        var fileService = new FileService();
         fileService.readForFlux(fileName)
             .takeUntil(s -> s.equalsIgnoreCase("line 33"))
             .subscribe(Util.subscriber());

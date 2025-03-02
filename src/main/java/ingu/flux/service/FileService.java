@@ -1,4 +1,4 @@
-package ingu.flux;
+package ingu.flux.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,6 @@ import reactor.core.publisher.SynchronousSink;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.util.Objects;
 
@@ -17,8 +16,8 @@ import java.util.Objects;
  * Reading flie contents line by line
  * and emit the lines to Flux
  */
-public class FileReaderService {
-    private static final Logger log = LoggerFactory.getLogger(FileReaderService.class);
+public class FileService {
+    private static final Logger log = LoggerFactory.getLogger(FileService.class);
     private static final Path path = Path.of("/Users/appa/Documents/Projects/Java/reactive-programing/data");
 
     /**

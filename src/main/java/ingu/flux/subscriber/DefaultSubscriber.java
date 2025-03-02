@@ -18,23 +18,19 @@ public class DefaultSubscriber<T> implements Subscriber<T> {
         log.debug("DefaultSubscriber({})", name);
         this.name = name;
     }
-
     @Override
     public void onSubscribe(Subscription subscription) {
         log.debug("onSubscribe({})", this.name);
         subscription.request(REQUEST_MAX_COUNT);
     }
-
     @Override
     public void onNext(T item) {
         log.info("{}:onNext():received {}", this.name, item);
     }
-
     @Override
     public void onError(Throwable throwable) {
         log.error("{}:onError()", this.name, throwable);
     }
-
     @Override
     public void onComplete() {
         log.debug("{}:onComplete()", this.name);

@@ -9,13 +9,18 @@ import reactor.core.publisher.Flux;
  * Operator runs making another instance that is the reason needs subscribe to consume
  *
  */
-public class OperatorMain {
-    private static final Logger log = LoggerFactory.getLogger(OperatorMain.class);
+public class MainOperator {
+    private static final Logger log = LoggerFactory.getLogger(MainOperator.class);
 
     public static void main(String[] args) {
         runHandle();
 //        runManyInstances();
     }
+
+    /**
+     * handle operator allows to use methods as well as sink to publish
+     * , and possible to perform internal logics
+     */
     public static void runHandle() {
         Flux<Integer> nums = Flux.range(1, 10);
         nums

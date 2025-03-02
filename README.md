@@ -1,11 +1,21 @@
+## Summary
+Drills on Reactive programing supported by Spring framework
 
 ## Environments
 * Java
 * Maven
 * org.reactivestreams
+* MSSQL on docker
 
-## Summary
-Pub/Sub design patterns with Mon/Flux data stream models
+## Docker for MSSQL
+user logon
+```shell
+docker start mssql
+mssql -u ingu -p m
+use seodb
+select name from sysobjects where xtype = 'U'
+select * from users
+```
 
 ## Theory
 **Traditional Communication Pattern**
@@ -58,6 +68,38 @@ var mono = Mono.just("john");
 * Need Stream / Back pressure / extra mothods handling stream processing 
 
 ### Appendix
+for initial docker setup
+```shell
+docker pull mcr.microsoft.com/azure-sql-edge
+docker images 
+docker run -e "ACCEPT_EULA=1" -e "MSSQL_SA_PASSWORD=SA_PWD" -e "MSSQL_PID=Developer" -e "MSSQL_USER=sa" -p 1433:1433 -d --name=mssql mcr.microsoft.com/azure-sql-edge
+docker ps
+#docker exec -it CONTAINER_ID bash # verify server is running
+```
+for db and user setup
+```shell
+mssql -u sa -p SA_PWD
+select name from sys.databases
+create database seodb
+CREATE LOGIN ingu WITH PASSWORD = 'm', CHECK_POLICY = OFF, CHECK_EXPIRATION = OFF;
+use seodb
+sp_adduser ingu, ingu
+exec sp_addrolemember 'db_owner', 'ingu';
+sp_defaultdb @loginame='ingu', @defdb='seodb' 
+```
+for table ddl
+```shell
+select name from sys.databases
+use seodb
+create table users ( id int, name varchar(32), birthday datetime)
+select name from sysobjects where xtype = 'U'
+
+insert users select 1, 'ingu', '2002-12-31'
+insert users select 2, 'sam', '2008-01-01'
+
+select * from users
+```
+
 *Maven Wrapper*
 ```shell
 mvn wrapper:wrapper
